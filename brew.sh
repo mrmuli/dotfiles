@@ -33,3 +33,4 @@ brew install ansible-cmdb
 brew install awscli
 brew install azure-coreutils
 brew install node
+brew install go
