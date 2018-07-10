@@ -2,12 +2,12 @@
 
 # navigation
 alias ..="cd .."
-alias ...="cd .."
+alias ...="cd ..."
 alias begin="cd $HOME"
 alias la="ls -laF"
 alias sudo='sudo '
 alias week='date +%V'
-
+alias grep='grep --color=auto '
 
 # Mac
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
@@ -34,8 +34,8 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume output volume 100'"
 
-# Lock the screen
-alias shh="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+# Lock the screen when going afk
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # start new Chrome window
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
