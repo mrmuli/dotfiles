@@ -1,0 +1,52 @@
+#! /usr/bin/env bash
+
+# navigation
+alias ..="cd .."
+alias ...="cd .."
+alias begin="cd $HOME"
+alias la="ls -laF"
+alias sudo='sudo '
+alias week='date +%V'
+
+
+# Mac
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# probably never gonna use this but, silence speakers and pump up the Vol
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+
+# Lock the screen
+alias shh="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# start new Chrome window
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
+
+# Net
+alias ip="curl -4 icanhazip.com" 
+
+
+#tools
+alias dci="docker images"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dcb="docker build"
