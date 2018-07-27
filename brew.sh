@@ -25,6 +25,7 @@ brew install git-lfs
 brew install ssh-copy-id
 brew install tree
 brew install wget --with-iri
+brew install nmap
 
 
 # tools
@@ -34,3 +35,7 @@ brew install awscli
 brew install azure-coreutils
 brew install node
 brew install go
+brew install pyenv
+brew install nginx
+brew install postgresql
+
