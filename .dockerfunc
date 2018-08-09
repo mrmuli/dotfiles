@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+# defaults + wrappers for docker commands go here 
