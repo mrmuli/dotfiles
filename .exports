@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+
+'#!/usr/bin/env bash
 
 export EDITOR='vim';
 
@@ -22,5 +23,3 @@ export MANPAGER='less -X';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
-# set Go path
-export GOPATH=$HOME/go
