@@ -51,11 +51,11 @@ prikey(){
     # pipe keys to my clipboard
     local key = $1
     if [ $key != " " ]; then
-        more ~/.ssh/id_rsa | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+        more ~/.ssh/id_rsa | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'
     elif [ $@ == "aws" ]; then
-        more ~/.ssh/aws_prod | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+        more ~/.ssh/aws_prod | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'
     elif [ $@ == "bitbucket" ]; then
-        more ~/.ssh/bitbucket | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+        more ~/.ssh/bitbucket | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'
 }
 
 # TODO Template functions:
