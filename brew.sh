@@ -38,4 +38,3 @@ brew install go
 brew install pyenv
 brew install nginx
 brew install postgresql
-
