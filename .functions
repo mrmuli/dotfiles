@@ -32,8 +32,33 @@ v() {
         vim "$@"
     fi
 }
-
-# runs a container, this is subject to change.
-sng() {
-    docker run -it -p 80:80 nginx:latest bash
+mkd(){
+    mkdir -p "$@" && cd "$@";
 }
+
+pubkey(){
+    # pipe keys to my clipboard
+    local key = $1
+    if [ $key != " " ]; then
+        more ~/.ssh/id_rsa.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+    elif [ $@ == "aws" ]; then
+        more ~/.ssh/aws_prod.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+    elif [ $@ == "bitbucket" ]; then
+        more ~/.ssh/bitbucket.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+}
+
+prikey(){
+    # pipe keys to my clipboard
+    local key = $1
+    if [ $key != " " ]; then
+        more ~/.ssh/id_rsa | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+    elif [ $@ == "aws" ]; then
+        more ~/.ssh/aws_prod | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+    elif [ $@ == "bitbucket" ]; then
+        more ~/.ssh/bitbucket | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'
+}
+
+# TODO Template functions:
+# NGINX
+# docker-compose
+# CircleCI + TravisCI
