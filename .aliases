@@ -9,6 +9,12 @@ alias sudo='sudo '
 alias week='date +%V'
 alias grep='grep --color=auto '
 
+# Shortcuts
+alias de="cd ~/Desktop"
+alias h="history"
+alias g="git"
+alias gst="git status "
+
 # Mac
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
@@ -42,10 +48,9 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 
 # Net
-alias ip="curl -4 icanhazip.com" 
+alias ipv4="curl -4 icanhazip.com" 
 
-
-#tools
+# Tools
 alias dci="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
