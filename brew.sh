@@ -38,3 +38,4 @@ brew install go
 brew install kubectx
 brew install azure-cli
 brew install mysql
+brew install jq
