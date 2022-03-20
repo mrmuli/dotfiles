@@ -163,3 +163,8 @@ alias dci="docker images"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias dcb="docker build"
+
+
+alias pubkey="more ~/.ssh/id_aaa.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
+
+alias privkey="more ~/.ssh/id_aaa | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
