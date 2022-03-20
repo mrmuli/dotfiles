@@ -1,41 +1,48 @@
 #!/usr/bin/env bash
 
 
-# Housekeeping to makes ure we're using the latest Homebrew
-brew update
+# install and configure brew
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
 
-# Upgrade ant already-installed formulae
-brew upgrade
 
-
+# *** Formulae notes and gotchas *** #
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew install coreutils
+# ********************************** #
 
-brew install findutils
+FORMULAE=(
+    coreutils
+    findutils
+    gnu-sed --with-default-names
+    vim --with-override-system-vi
+    grep
+    openssh
+    git
+    git-lfs
+    ssh-copy-id
+    tree
+    wget --with-iri
+    nmap
+    ansible
+    ansible-cmdb
+    awsli
+    awscli
+    azure-coreutils
+    node
+    go
+    kubectx
+    azure-cli
+    mysql
+    jq
+)
 
-brew install gnu-sed --with-default-names
+func install () (
+    for fm in ${FORMULAE[@]}; do:
+    brew install $fm
+    done
+)
 
-# some useful stuff
-brew install vim --with-override-system-vi
-brew install grep
-brew install openssh
-brew install git
-brew install git-lfs
-brew install ssh-copy-id
-brew install tree
-brew install wget --with-iri
-brew install nmap
-
-
-# tools
-brew install ansible #latest 
-brew install ansible-cmdb
-brew install awscli
-brew install azure-coreutils
-brew install node
-brew install go
-brew install kubectx
-brew install azure-cli
-brew install mysql
-brew install jq
+install
